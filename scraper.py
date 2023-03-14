@@ -60,9 +60,6 @@ document_name = "pdfs/20230301_Weekly_Epi_Update_132.pdf"
 
 pdf_content = extract_content(document_type, document_name, environment)
 
-# Display extracted content.
-print(json.dumps(pdf_content["parsed_document"]["country_cases_summarized"], indent=2))
-
 url = convert_to_excel(pdf_content["id"])
 
 if url is not None:
