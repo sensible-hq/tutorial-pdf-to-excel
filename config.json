@@ -1,88 +1,88 @@
 {
-    "fields": [
-      {
-        "id": "newly_reported_covid_19_cases",
-        "anchor": "Newly reported and cumulative COVID-19 confirmed cases and deaths",
-        "type": "table",
-        "method": {
-          "id": "table",
-          "columns": [
-            {
-              "id": "WHO_Region",
-              "terms": [
-                "WHO Region"
-              ],
-              "isRequired": true
-            },
-            {
-              "id": "new_cases_in_28_days",
-              "terms": [
-                "New cases in",
-                "last 28 days"
-              ],
-              "stopTerms": [
-                "change",
-                "death"
-              ],
-              "isRequired": true
-            },
-            {
-              "id": "change_in_new_cases_in_28_days_(%)",
-              "terms": [
-                "Change in",
-                "new cases in",
-                "last 28 days *"
-              ],
-              "stopTerms": [
-                "death"
-              ],
-              "type": "number",
-              "isRequired": true
-            },
-            {
-              "id": "cumulative_cases",
-              "terms": [
-                "Cumulative",
-                "cases(%)"
-              ],
-              "isRequired": true
-            },
-            {
-              "id": "new_deaths_in_28_days",
-              "terms": [
-                "new deaths",
-                "in last 28",
-                "days (%)"
-              ],
-              "stopTerms": [
-                "change"
-              ],
-              "isRequired": true
-            },
-            {
-              "id": "change_in_new_deaths_in_28_days_(%)",
-              "terms": [
-                "Change in",
-                "new deaths",
-                "in last 28"
-              ],
-              "type": "number",
-              "isRequired": true
-            },
-            {
-              "id": "cumulative_deaths",
-              "terms": [
-                "Cumulative",
-                "deaths"
-              ],
-              "isRequired": true
-            }
-          ],
-          "stop": {
-            "type": "startsWith",
-            "text": "*Percent change"
+  "fields": [
+    {
+      "id": "newly_reported_covid_19_cases",
+      "anchor": "Newly reported and cumulative COVID-19 confirmed cases and deaths",
+      "type": "table",
+      "method": {
+        "id": "table",
+        "columns": [
+          {
+            "id": "WHO_Region",
+            "terms": [
+              "WHO Region" 
+            ],
+            "isRequired": true
+          },
+          {
+            "id": "new_cases_in_28_days",
+            "terms": [
+              "New cases in",
+              "last 28 days"
+            ],
+            "stopTerms": [
+              "change",
+              "death"
+            ],
+            "isRequired": true
+          },
+          {
+            "id": "change_in_new_cases_in_28_days_(%)",
+            "terms": [
+              "Change in",
+              "new cases in",
+              "last 28 days *"
+            ],
+            "stopTerms": [
+              "death"
+            ],
+            "type": "number",
+            "isRequired": true
+          },
+          {
+            "id": "cumulative_cases",
+            "terms": [
+              "Cumulative",
+              "cases(%)"
+            ],
+            "isRequired": true
+          },
+          {
+            "id": "new_deaths_in_28_days",
+            "terms": [
+              "new deaths",
+              "in last 28",
+              "days (%)"
+            ],
+            "stopTerms": [
+              "change"
+            ],
+            "isRequired": true
+          },
+          {
+            "id": "change_in_new_deaths_in_28_days_(%)",
+            "terms": [
+              "Change in",
+              "new deaths",
+              "in last 28"
+            ],
+            "type": "number",
+            "isRequired": true
+          },
+          {
+            "id": "cumulative_deaths",
+            "terms": [
+              "Cumulative",
+              "deaths"
+            ],
+            "isRequired": true
           }
+        ],
+        "stop": {
+          "type": "startsWith",
+          "text": "*Percent change"
         }
       }
-    ]
-  }
+    }
+  ]
+}
