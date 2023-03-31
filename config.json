@@ -42,7 +42,7 @@
             {
               "id": "cumulative_cases",
               "terms": [
-                "Cummulative",
+                "Cumulative",
                 "cases(%)"
               ],
               "isRequired": true
@@ -72,7 +72,7 @@
             {
               "id": "cumulative_deaths",
               "terms": [
-                "Cummulative",
+                "Cumulative",
                 "deaths"
               ],
               "isRequired": true
