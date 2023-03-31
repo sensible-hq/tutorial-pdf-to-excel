@@ -35,7 +35,7 @@ def convert_to_excel(ids: str) -> str:
         "authorization": f"Bearer {API_KEY}"
     }
 
-    response = requests.get(url, headers=headers,)
+    response = requests.get(url, headers=headers)
 
     print(f"Conversion Status code: {response.status_code}")
     if response.status_code == 200:
