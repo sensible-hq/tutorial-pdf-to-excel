@@ -8,14 +8,14 @@
         "id": "table",
         "columns": [
           {
-            "id": "WHO_Region",
+            "id": "WHO Region",
             "terms": [
-              "WHO Region" 
+              "WHO Region"
             ],
             "isRequired": true
           },
           {
-            "id": "new_cases_in_28_days",
+            "id": "New cases in 28 days",
             "terms": [
               "New cases in",
               "last 28 days"
@@ -24,10 +24,15 @@
               "change",
               "death"
             ],
-            "isRequired": true
+            "isRequired": true,
+            "type": {
+              "id": "custom",
+              "pattern": "^[0-9 ]+",
+              "type": "number"
+            }
           },
           {
-            "id": "change_in_new_cases_in_28_days_(%)",
+            "id": "Change in new cases in 28 days (%)",
             "terms": [
               "Change in",
               "new cases in",
@@ -36,19 +41,22 @@
             "stopTerms": [
               "death"
             ],
-            "type": "number",
             "isRequired": true
           },
           {
-            "id": "cumulative_cases",
+            "id": "Cumulative cases",
             "terms": [
-              "Cumulative",
-              "cases(%)"
+              "Cumulative cases"
             ],
-            "isRequired": true
+            "isRequired": true,
+            "type": {
+              "id": "custom",
+              "pattern": "^[0-9 ]+",
+              "type": "number"
+            }
           },
           {
-            "id": "new_deaths_in_28_days",
+            "id": "New deaths in 28 days",
             "terms": [
               "new deaths",
               "in last 28",
@@ -57,30 +65,38 @@
             "stopTerms": [
               "change"
             ],
-            "isRequired": true
+            "isRequired": true,
+            "type": {
+              "id": "custom",
+              "pattern": "^[0-9 ]+",
+              "type": "number"
+            }
           },
           {
-            "id": "change_in_new_deaths_in_28_days_(%)",
+            "id": "Change in new deaths in 28 days (%)",
             "terms": [
               "Change in",
               "new deaths",
               "in last 28"
             ],
-            "type": "number",
             "isRequired": true
           },
           {
-            "id": "cumulative_deaths",
+            "id": "Cumulative deaths",
             "terms": [
-              "Cumulative",
-              "deaths"
+              "Cumulative deaths"
             ],
-            "isRequired": true
+            "isRequired": true,
+            "type": {
+              "id": "custom",
+              "pattern": "^[0-9 ]+",
+              "type": "number"
+            }
           }
         ],
         "stop": {
           "type": "startsWith",
-          "text": "*Percent change"
+          "text": "*Percent change in the"
         }
       }
     }
