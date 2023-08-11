@@ -41,7 +41,7 @@ def convert_to_excel(ids: str) -> str:
     # Define the headers for the API request
     headers = {
         "accept": "application/json",
-        "authorization": 'Bearer {}'.format(SENSIBLE_API_KEY)
+        "Authorization": 'Bearer {}'.format(SENSIBLE_API_KEY)
     }
 
     # Send a GET request to the API and get the response
