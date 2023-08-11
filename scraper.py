@@ -3,7 +3,7 @@ import os
 import requests
 
 # Retrieve the Sensible API key from environment variables
-SENSIBLE_API_KEY = os.getenv('SENSIBLE_API_KEY')
+SENSIBLE_API_KEY = "INSERT YOUR API KEY HERE"
 
 # Define the Bearer token prefix
 BEARER = "Bearer"
@@ -11,11 +11,11 @@ BEARER = "Bearer"
 # Define the function to extract content from a PDF file
 def extract_content(d_type: str, d_name: str, env: str) -> dict:
     # Construct the URL for the API endpoint
-    url = f"https://api.sensible.so/v0/extract/{d_type}?environment={env}"
+    url = "https://api.sensible.so/v0/extract/{}?environment={}".format(d_type, env)
 
     # Define the headers for the API request
     headers = {
-        "Authorization": f"{BEARER} {SENSIBLE_API_KEY}",
+        "Authorization": 'Bearer {}'.format(SENSIBLE_API_KEY),
         "content-type": "application/pdf"
     }
 
@@ -25,7 +25,7 @@ def extract_content(d_type: str, d_name: str, env: str) -> dict:
         # Send a POST request to the API and get the response
         response = requests.post(url, headers=headers, data=pdf_file)
 
-        print(f"Extraction Status code: {response.status_code}")
+        print("Extraction Status code: {}".format(response.status_code))
         # If the request is successful, return the JSON response
         if response.status_code == 200:
             return response.json()
@@ -36,18 +36,18 @@ def extract_content(d_type: str, d_name: str, env: str) -> dict:
 # Define the function to convert the extracted content to an Excel file
 def convert_to_excel(ids: str) -> str:
     # Construct the URL for the API endpoint
-    url = f"https://api.sensible.so/v0/generate_excel/{ids}"
+    url = "https://api.sensible.so/v0/generate_excel/{}".format(ids)
 
     # Define the headers for the API request
     headers = {
         "accept": "application/json",
-        "authorization": f"{BEARER} {SENSIBLE_API_KEY}"
+        "authorization": 'Bearer {}'.format(SENSIBLE_API_KEY)
     }
 
     # Send a GET request to the API and get the response
     response = requests.get(url, headers=headers)
 
-    print(f"Conversion Status code: {response.status_code}")
+    print("Conversion Status code: {}".format(response.status_code))
     # If the request is successful, return the URL for the Excel file
     if response.status_code == 200:
         data = response.json()
@@ -61,12 +61,12 @@ def download_xlsx(url: str, d_name: str) -> None:
     # Send a GET request to the URL and get the response
     response = requests.get(url)
     # Define the filename for the downloaded file
-    filename = f"{d_name}.xlsx"
+    filename = "{}.xlsx".format(d_name)
     # Open the file in binary mode and write the response content to it
     with open(filename, "wb") as fp:
         fp.write(response.content)
 
-    print(f"{filename} downloaded.")
+    print("{} downloaded.".format(filename))
 
 # Define the document type, environment, and document name
 document_type = "covid_reports"
